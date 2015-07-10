@@ -1,0 +1,10 @@
+<% max_quantity_per_order = @product.max_quantity_per_order %>
+<% default = 1 %>
+<% min = 1 %>
+<% classes = 'title form-control' %>
+
+<% if max_quantity_per_order.nil? %>
+    <%= number_field_tag :quantity, default, min: min, class: classes %>
+<% else %>
+    <%= number_field_tag :quantity, default, min: min, max: max_quantity_per_order, class: classes %>
+<% end %>

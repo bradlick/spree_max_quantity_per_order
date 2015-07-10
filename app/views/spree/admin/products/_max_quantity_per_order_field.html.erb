@@ -1,0 +1,7 @@
+<div data-hook="admin_product_form_max_quantity_per_order">
+  <%= f.field_container :max_quantity_per_order, class: ['form-group'] do %>
+      <%= f.label :max_quantity_per_order, Spree.t(:max_quantity_per_order) %>
+      <%= f.number_field :max_quantity_per_order, { class: 'form-control', min: 1, step: 1 } %>
+      <%= f.error_message_on :max_quantity_per_order %>
+  <% end %>
+</div>

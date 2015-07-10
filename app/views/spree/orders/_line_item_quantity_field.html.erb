@@ -1,0 +1,11 @@
+<% max_quantity_per_order = line_item.variant.product.max_quantity_per_order %>
+<% min = 0 %>
+<% classes = 'form-control line_item_quantity' %>
+<% size = 5 %>
+
+
+<% if max_quantity_per_order.nil? %>
+    <%= item_form.number_field :quantity, min: min, class: classes, size: size %>
+<% else %>
+    <%= item_form.number_field :quantity, min: min, max: max_quantity_per_order, class: classes, size: size %>
+<% end %>
